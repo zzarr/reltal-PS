@@ -3,9 +3,38 @@
 
 using namespace std;
 
+long total,lamaJam;
 
-long sewa(int x, int t){
-    long sewa[5]=[5000,4000,5500,7000,10000];
+void pilihan1(){
+        int lamaJam;
+        cout<<"||===========================================||"<<endl;
+        cout<<"||    >> MAIN DISINI DIHITUNG PERJAM <<      ||"<<endl;
+        cout<<"||===========================================||\n"<<endl;
+        cout<<" > Masukan lama main PS : ";
+        cin>>lamaJam;
+        cout<<endl;
+}
+
+void pilihan2(){
+        int lamaHari;
+        string nama,alamat;
+        cout<<"||===========================================||"<<endl;
+        cout<<"||       >> MASUKKAN DATA DIRI ANDA <<       ||"<<endl;
+        cout<<"||===========================================||"<<endl;
+        cout<<" > Masukan nama anda \t\t: ";
+        cin>> nama;
+        cout<<" > Masukkan alamat anda \t: ";
+        cin>> alamat;
+        cout<<endl;
+        cout<<"||===========================================||"<<endl;
+        cout<<"|| >> PEMINJAMAN HANYA DIHITUNG PERHARI!! << ||"<<endl;
+        cout<<"||===========================================||"<<endl;
+        cout<<" > Masukkan berapa hari ingin meminjam : ";
+        cin>>lamaHari;
+}
+float sewa(int x, int t){
+    int index,no;
+    long sewa[5]={5000,4000,5500,7000,10000};
     if(x==1){
         total = t * sewa[x-1];
     }
@@ -18,14 +47,20 @@ long sewa(int x, int t){
     else if(x==4){
         total = t * sewa[x-1];
     }
-    els if(x==5){
+    else if(x==5){
         total = t * sewa[x-1];
     }
+    for(index=0; index<5; index++){
+         cout<< " HARGA PlayStation "<<index+1<<" : "<<sewa[index]<<"/Jam"<<endl;
+    }
+
+    cout<< "\nTOTAL : "<<total;
     return total;
 }
 
-long pinjam(int x, int t){
-    long pinjam[5]=[45000,35000,50000,70000,95000];
+float pinjam(int x, int t){
+    int index,no;
+    long pinjam[5]={45000,35000,50000,70000,95000};
     if(x==1){
         total = t * pinjam[x-1];
     }
@@ -38,9 +73,15 @@ long pinjam(int x, int t){
     else if(x==4){
         total = t * pinjam[x-1];
     }
-    els if(x==5){
+    else if(x==5){
         total = t * pinjam[x-1];
     }
+    for(index=0; index<5; index++){
+         cout<< " HARGA PlayStation "<<index+1<<" : "<<pinjam[index]<<"/Hari"<<endl;
+    }
+    cout<<"======================================= |"<<endl;
+    cout<<"\t\tTOTAL : "<<total<<"\t\t|"<<endl;
+    cout<<"======================================= |"<<endl;
     return total;
 }
 
@@ -48,54 +89,40 @@ long pinjam(int x, int t){
 
 int main()
 {
-    int pilihPS,lamaJam,harga, pilihSewa,lamaHari;
-    string nama,alamat;
-    long total;
-    cout<<"---- RENTAL PS ----\n";
-    cout<<"---- Menu utama ---\n";
-    cout<<"| 1. main disini\n";
-    cout<<"| 2. pinjam\n";
-    cout<<"masukan pilihan anda : ";
+    int lamaJam,lamaHari,pilihSewa,pilihPS,harga,ps,nyewa;
+    cout<<"  <<<<<< RENTAL PS TI 1C >>>>>>  "<<endl;
+    cout<<"============================="<<endl;
+    cout<<"|| ---- Layanan Utama ---- ||"<<endl;
+    cout<<"||                         ||"<<endl;
+    cout<<"|| 1. Main disini          ||"<<endl;
+    cout<<"|| 2. Pinjam               ||"<<endl;
+    cout<<"============================="<<endl;
+    cout<<" Masukkan Pilihan Anda berdasarkan nomor : ";
     cin >> pilihSewa;
     system("cls");
-    if(pilihSewa==2){
-        cout<<"<<<<MASUKKAN DATA DIRI ANDA>>>>\n";
-        cout<<"masukan nama anda \t:";
-        cin >> nama;
-        cout<<"masukan alamat anda :";
-        cin>>alamat;
-        system("cls");
-        cout<<"PEMINJAMAN HANYA DIHITUNG PERHARI!!!\n";
-        count<<"masukan berapa hari ingin meminjam : ";
-        cin>>lamaHari;
-    }
-    system("cls");
-    cout <<"<<<<<< varian PS yang tersedia >>>>>>\n";
-    cout<<"| 1. PS 1 |\n";
-    cout<<"| 2. PS 2 |\n";
-    cout<<"| 3. PS 3 |\n";
-    cout<<"| 4. PS 4 |\n";
-    cout<<"| 5. PS 5 |\n";
-    cout<<"=====================================\n";
-    cout<<"silahkan pilih varian PS berdasarkan nomor nya :";
-    cin>>pilihPS;
-    system("cls");
+
     if(pilihSewa==1){
-        cout<<"///////////////////////////////////////\n";
-        cout<<"masukan lama main PS :";
-        cin>>lamaJam;
-        cout<<"///////////////////////////////////////\n";
+        pilihan1();
     }
-    system("cls");
-    if(pilihPS==1){
-        total = sewa(pilihPS,lamaJam);
-        count<<"Sewa PS "
-    }
-
-
-
     else if(pilihSewa==2){
-        total = pinjam(pilihPS,lamaHari);
+        pilihan2();
+    }
+    cout<<endl;
+    cout<<"||================================||"<<endl;
+    cout<<"|| <<<<<< PS YANG TERSEDIA >>>>>> ||"<<endl;;
+    cout<<"||================================||"<<endl;
+
+    for(ps=1; ps<=5; ps++){
+        cout<<"| "<<ps<<". PlayStation "<<ps<<"  <<\n";
+    }
+    cout<<"====================================="<<endl;
+    cout<<" silahkan pilih varian PS berdasarkan nomor : ";
+    cin>>pilihPS;
+    if(pilihSewa==1){
+        sewa(pilihPS, lamaJam);
+    }
+     else if(pilihSewa==2){
+        pinjam(pilihPS, lamaHari);
     }
 
 
