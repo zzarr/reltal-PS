@@ -5,9 +5,12 @@ using namespace std;
 
 long sewa[5]={5000,4000,5500,7000,10000};
 long pinjam[5]={45000,35000,50000,70000,95000};
+string varianMie[4]={"Goreng","Rebus(original","Soto","Ayam geprek"};
+string makam[2]={"Indomie", Nasi Goreng};
 int lamaJam;
 int lamaHari;
-float totalBayar;
+float totalBayarPS,totalBayarMM,totalseluruh;
+string nama, alamat;
 
 void pilihan1(){
         cout<<"||===========================================||"<<endl;
@@ -19,7 +22,7 @@ void pilihan1(){
 }
 
 void pilihan2(){
-        string nama,alamat;
+        //string nama,alamat;
         cout<<"||===========================================||"<<endl;
         cout<<"||       >> MASUKKAN DATA DIRI ANDA <<       ||"<<endl;
         cout<<"||===========================================||"<<endl;
@@ -34,8 +37,10 @@ void pilihan2(){
         cout<<" > Masukkan berapa hari ingin meminjam : ";
         cin>>lamaHari;
 }
+
+
 void pilihmenu1(){
-    float makanan,totalHarga1,totalseluruh;
+    float makanan;//,totalHarga1,totalseluruh
     string yesno;
     cout<<"| Pilih Makanan :            |"<<endl;
     cout<<"|   1. Indomie               | Rp5.000"<<endl;
@@ -121,7 +126,7 @@ void pilihmenu1(){
     }
     else if(makanan==2){
         cout<<"========================================================="<<endl;
-        cout<<"| Anda Memilih Mie Goreng. Apakah ingin menambah Telor? |"<<endl;
+        cout<<"| Anda Memilih Nasi Goreng. Apakah ingin menambah Telor? |"<<endl;
         cout<<"========================================================="<<endl;
         cout<<" Ketik y/n untuk memilih(yes/no) : ";
         cin>>yesno;
@@ -131,7 +136,7 @@ void pilihmenu1(){
         totalseluruh = totalBayar+totalHarga1;
         cout<<endl;
         cout<<"========================================================="<<endl;
-        cout<<" TOTAL KESELURUHAN: "<<totalseluruh<<endl;
+        cout<<" TOTAL KESELURUHAN MAKAN: "<<totalseluruh<<endl;
         cout<<"========================================================="<<endl;
     }
 }
@@ -171,7 +176,7 @@ void pilihmenu2(){
     totalSeluruh = totalBayar+totalHarga2;
     cout<<endl;
     cout<<"========================================================="<<endl;
-    cout<<" TOTAL KESELURUHAN: "<<totalSeluruh<<endl;
+    cout<<" TOTAL KESELURUHAN MINUM: "<<totalSeluruh<<endl;
     cout<<"========================================================="<<endl;
 }
 
@@ -182,7 +187,9 @@ void pilihmenu3(){
     cout<<"| Pilih Makanan :            |"<<endl;
     cout<<"|   1. Indomie               | Rp5.000"<<endl;
     cout<<"|   2. Nasi Goreng           | Rp7.000"<<endl;
-    cout<<"|   3. Tambah Telor          | Rp2.000"<<endl;
+    cout<<"--------------------------------------"<<endl;
+    cout<<"|   +. Tambah Telor          | Rp2.000"<<endl;
+    cout<<"--------------------------------------"<<endl;
         cout<<" >> Pilih Makanan Sesuai No  : ";
         cin>>makanan;
         cout<<"==========================================="<<endl;
@@ -282,9 +289,12 @@ void pilihmenu3(){
     totalSeluruh = totalBayar+totalHarga1+totalHarga2;
     cout<<endl;
     cout<<"========================================================="<<endl;
-    cout<<"TOTAL KESELURUHAN: "<<totalSeluruh<<endl;
+    cout<<"TOTAL KESELURUHAN MAKAN&MINUM: "<<totalSeluruh<<endl;
     cout<<"========================================================="<<endl;
 }
+
+
+
 long sewaPs(int x, int t){
     float total;
     if(x==1){
@@ -329,6 +339,7 @@ long pinjamPs(int x, int t){
 
 int main()
 {
+
     int index,pilihSewa,pilihPS,harga,ps,nyewa,pilih;
     string enter;
     cout<<"  <<<<<< RENTAL PS TI 1C >>>>>>  "<<endl;
@@ -372,7 +383,7 @@ int main()
         }
     }
     cout<<"||=======================================||"<<endl;
-    cout<<"||\t\tTOTAL : "<<totalBayar<<"\t\t ||"<<endl;
+    cout<<"||\t\tTOTAL : "<<totalBayarPS<<"\t\t ||"<<endl;
     cout<<"||=======================================||"<<endl;
     cout<<endl;
     cout<<"ketik \"ok\" Lalu klik enter : ";
@@ -380,26 +391,65 @@ int main()
 
     system("cls");
     if(pilihSewa==1){
-        cout<<"================================"<<endl;
-        cout<<"|| ---- Layanan Tambahan ---- ||"<<endl;
-        cout<<"||                            ||"<<endl;
-        cout<<"|| 1. Makanan                 ||"<<endl;
-        cout<<"|| 2. Minuman                 ||"<<endl;
-        cout<<"|| 3. Makanan&Minuman         ||"<<endl;
-        cout<<"================================"<<endl;
-        cout<<" Klik \"t\" untuk skip!!"<<endl;
-        cout<<" Pilih Yang Anda Mau(sesuai nomor) : ";
-        cin>>pilih;
-        cout<<endl;
+                cout<<"================================"<<endl;
+                cout<<"|| ---- Layanan Tambahan ---- ||"<<endl;
+                cout<<"||                            ||"<<endl;
+                cout<<"|| 1. Makanan                 ||"<<endl;
+                cout<<"|| 2. Minuman                 ||"<<endl;
+                cout<<"|| 3. Makanan&Minuman         ||"<<endl;
+                cout<<"================================"<<endl;
+                cout<<" Klik \"0\" untuk skip!!"<<endl;
+                cout<<" Pilih Yang Anda Mau(sesuai nomor) : ";
+                cin>>pilih;
+                cout<<endl;
+                if(pilih==1){
+                    pilihmenu1();
+                }
+                else if(pilih==2){
+                    pilihmenu2();
+                }
+                else if(pilih==3){
+                    pilihmenu3();
+                }
+        }
+
+
+    if(pilihSewa==1){
+        cout<<">>>> Rental PS - Faktur pelanggan <<<<\n";
+        cout<<"| Tipe PS             : PlayStation "<<pilihPS<<" |\n";
+        cout<<"| Lama Sewa           : "<<lamaJam "jam |\n";
+        cout<<"| ------------ Tambahan --------------- |\n";
         if(pilih==1){
-            pilihmenu1();
+            if()
         }
-        else if(pilih==2){
-            pilihmenu2();
-        }
-        else if(pilih==3){
-            pilihmenu3();
-        }
+        cout<<"|=======================================|\n";
+        cout<<"Total biaya pinjam \t:"<<totalseluruh <<" |n";
+        cout<<"|=======================================|\n";
     }
+    else if(pilihSewa==2){
+        cout<<">>>> Rental PS - Faktur pelanggan <<<<\n";
+        cout<<"| nama pelanggan      : "<< nama << " |\n";
+        cout<<"| alamat pelanggan    : "<<alamat<<" |\n";
+        cout<<"| Tipe PS             : PlayStation "<<pilihPS<<" |\n";
+        cout<<"| Lama Pinjam         : "<<lamaHari<< "Hari";
+        cout<<"|=======================================|\n";
+        cout<<"Total biaya pinjam \t:"<<totalseluruh <<" |n";
+        cout<<"|=======================================|\n";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return 0;
 }
+
