@@ -1,13 +1,8 @@
 #include <iostream>
 #include <conio.h>
-
+#include "sub.h"
 using namespace std;
 
-long sewa[5]={5000,4000,5500,7000,10000};
-long pinjam[5]={45000,35000,50000,70000,95000};
-int lamaJam;
-int lamaHari;
-float totalBayar;
 
 void pilihan1(){
         cout<<"||===========================================||"<<endl;
@@ -19,15 +14,14 @@ void pilihan1(){
 }
 
 void pilihan2(){
-        string nama,alamat;
         cout<<"||===========================================||"<<endl;
         cout<<"||       >> MASUKKAN DATA DIRI ANDA <<       ||"<<endl;
         cout<<"||===========================================||"<<endl;
+        getline(cin,spasi);
         cout<<" > Masukan nama anda \t\t: ";
-        cin>> nama;
+        getline(cin, nama);
         cout<<" > Masukkan alamat anda \t: ";
-        cin>> alamat;
-        cout<<endl;
+        getline(cin, alamat);
         cout<<"||===========================================||"<<endl;
         cout<<"|| >> PEMINJAMAN HANYA DIHITUNG PERHARI!! << ||"<<endl;
         cout<<"||===========================================||"<<endl;
@@ -35,8 +29,6 @@ void pilihan2(){
         cin>>lamaHari;
 }
 void pilihmenu1(){
-    float makanan,totalHarga1,totalseluruh;
-    string yesno;
     cout<<"| Pilih Makanan :            |"<<endl;
     cout<<"|   1. Indomie               | Rp5.000"<<endl;
     cout<<"|   2. Nasi Goreng           | Rp7.000"<<endl;
@@ -45,7 +37,6 @@ void pilihmenu1(){
     cin>>makanan;
     cout<<"==========================================="<<endl;
     if(makanan==1){
-        int rasa;
         string yesno;
         cout<<"| Pilih Varian Rasa INDOMIE:    |"<<endl;
         cout<<"|   1. Mie Goreng               |"<<endl;
@@ -58,85 +49,95 @@ void pilihmenu1(){
             cout<<"========================================================="<<endl;
             cout<<"| Anda Memilih Mie Goreng. Apakah ingin menambah Telor? |"<<endl;
             cout<<"========================================================="<<endl;
-            cout<<" Ketik y/n untuk memilih(yes/no) : ";
+            cout<<" Ketik \"y/n\" untuk memilih(yes/no) : ";
             cin>>yesno;
+            totalHarga1 = 5000;
             if(yesno=="y"){
                 totalHarga1 = 5000+2000;
             }
-            totalHarga1 = 5000+2000;
             totalseluruh = totalBayar+totalHarga1;
             cout<<endl;
-            cout<<"========================================================="<<endl;
-            cout<<" TOTAL KESELURUHAN: "<<totalseluruh<<endl;
-            cout<<"========================================================="<<endl;
+            cout<<"============================================"<<endl;
+            cout<<"||\t\tTOTAL : "<<totalHarga1<<"\t\t ||"<<endl;
+            cout<<"============================================"<<endl;
+            cout<<" Ketik \"n\" untuk mengakhiri : ";
+            cin>>enter;
         }
         else if(rasa==2){
             cout<<"=================================================================="<<endl;
             cout<<"| Anda Memilih Mie Rebus(Original). Apakah ingin menambah Telor? |"<<endl;
             cout<<"=================================================================="<<endl;
-            cout<<" Ketik y/n untuk memilih(yes/no) : ";
+            cout<<" Ketik \"y/n\" untuk memilih(yes/no) : ";
             cin>>yesno;
+            totalHarga1 = 5000;
             if(yesno=="y"){
                 totalHarga1 = 5000+2000;
             }
-            totalHarga1 = 5000+2000;
             totalseluruh = totalBayar+totalHarga1;
             cout<<endl;
-            cout<<"========================================================="<<endl;
-            cout<<" TOTAL KESELURUHAN: "<<totalseluruh<<endl;
-            cout<<"========================================================="<<endl;
+            cout<<"============================================"<<endl;
+            cout<<"||\t\tTOTAL : "<<totalHarga1<<"\t\t ||"<<endl;
+            cout<<"============================================"<<endl;
+            cout<<" Ketik \"n\" untuk mengakhiri : ";
+            cin>>enter;
         }
         else if(rasa==3){
             cout<<"======================================================="<<endl;
             cout<<"| Anda Memilih Mie Soto. Apakah ingin menambah Telor? |"<<endl;
             cout<<"======================================================="<<endl;
-            cout<<" Ketik y/n untuk memilih(yes/no) : ";
+            cout<<" Ketik \"y/n\" untuk memilih(yes/no) : ";
             cin>>yesno;
+            totalHarga1 = 5000;
             if(yesno=="y"){
                 totalHarga1 = 5000+2000;
             }
-            totalHarga1 = 5000+2000;
             totalseluruh = totalBayar+totalHarga1;
             cout<<endl;
-            cout<<"========================================================="<<endl;
-            cout<<" TOTAL KESELURUHAN: "<<totalseluruh<<endl;
-            cout<<"========================================================="<<endl;
+            cout<<"============================================"<<endl;
+            cout<<"||\t\tTOTAL : "<<totalHarga1<<"\t\t ||"<<endl;
+            cout<<"============================================"<<endl;
+            cout<<" Ketik \"n\" untuk mengakhiri : ";
+            cin>>enter;
         }
         else if(rasa==4){
             cout<<"=============================================================="<<endl;
             cout<<"| Anda Memilih Mie Ayam Geprek. Apakah ingin menambah Telor? |"<<endl;
             cout<<"=============================================================="<<endl;
-            cout<<" Ketik y/n untuk memilih(yes/no) : ";
+            cout<<" Ketik \"y/n\" untuk memilih(yes/no) : ";
             cin>>yesno;
+            totalHarga1 = 5000;
             if(yesno=="y"){
                 totalHarga1 = 5000+2000;
             }
-            totalHarga1 = 5000+2000;
             totalseluruh = totalBayar+totalHarga1;
             cout<<endl;
-            cout<<"========================================================="<<endl;
-            cout<<" TOTAL KESELURUHAN: "<<totalseluruh<<endl;
-            cout<<"========================================================="<<endl;
+            cout<<"============================================"<<endl;
+            cout<<"||\t\tTOTAL : "<<totalHarga1<<"\t\t ||"<<endl;
+            cout<<"============================================"<<endl;
+            cout<<" Ketik \"n\" untuk mengakhiri : ";
+            cin>>enter;
         }
     }
     else if(makanan==2){
         cout<<"========================================================="<<endl;
-        cout<<"| Anda Memilih Mie Goreng. Apakah ingin menambah Telor? |"<<endl;
+        cout<<"| Anda Memilih Nasi Goreng. Apakah ingin menambah Telor? |"<<endl;
         cout<<"========================================================="<<endl;
         cout<<" Ketik y/n untuk memilih(yes/no) : ";
         cin>>yesno;
+        totalHarga1 = 7000;
         if(yesno=="y"){
             totalHarga1 = 5000+2000;
         }
-        totalseluruh = totalBayar+totalHarga1;
-        cout<<endl;
-        cout<<"========================================================="<<endl;
-        cout<<" TOTAL KESELURUHAN: "<<totalseluruh<<endl;
-        cout<<"========================================================="<<endl;
+    totalseluruh = totalBayar+totalHarga1;
+    cout<<endl;
+    cout<<"============================================"<<endl;
+    cout<<"||\t\tTOTAL : "<<totalHarga1<<"\t\t ||"<<endl;
+    cout<<"============================================"<<endl;
+    cout<<" Ketik \"n\" untuk mengakhiri : ";
+    cin>>enter;
     }
 }
 void pilihmenu2(){
-    float totalHarga2,minuman,totalSeluruh;
         cout<<"| Pilih Minuman :             |"<<endl;
         cout<<"|    1. Pop Ice               | Rp3.000"<<endl;
         cout<<"|    2. TeaJus                | Rp2.000"<<endl;
@@ -145,40 +146,38 @@ void pilihmenu2(){
         cout<<"| >> Pilih Yang Anda Inginkan : ";
         cin>>minuman;
         if(minuman==1){
-            string rasa;
             totalHarga2 = 3000;
+            totalseluruh = totalBayar+totalHarga2;
             cout<<"| >> Pilih Rasa Pop Ice       : ";
-            cin>>rasa;
+            cin>>varian;
         }
         else if(minuman==2){
-            string rasa;
             totalHarga2 = 2000;
+            totalseluruh = totalBayar+totalHarga2;
             cout<<"| >> Pilih Rasa TeaJus        : ";
-            cin>>rasa;
+            cin>>varian;
         }
         else if(minuman==3){
-            string rasa;
             totalHarga2 = 3000;
+            totalseluruh = totalBayar+totalHarga2;
             cout<<"| >> Pilih Rasa Nutrisari     : ";
-            cin>>rasa;
+            cin>>varian;
         }
         else if(minuman==4){
-            string rasa;
             totalHarga2 = 4000;
+            totalseluruh = totalBayar+totalHarga2;
             cout<<"| >> Pilih Rasa Susu          : ";
-            cin>>rasa;
+            cin>>varian;
         }
-    totalSeluruh = totalBayar+totalHarga2;
     cout<<endl;
-    cout<<"========================================================="<<endl;
-    cout<<" TOTAL KESELURUHAN: "<<totalSeluruh<<endl;
-    cout<<"========================================================="<<endl;
+    cout<<"============================================"<<endl;
+    cout<<"||\t\tTOTAL : "<<totalHarga2<<"\t\t ||"<<endl;
+    cout<<"============================================"<<endl;
+    cout<<" Ketik \"n\" untuk mengakhiri : ";
+    cin>>enter;
 }
 
 void pilihmenu3(){
-    int makanan,minuman;
-    float totalHarga1,totalHarga2,totalSeluruh;
-    string yesno;
     cout<<"| Pilih Makanan :            |"<<endl;
     cout<<"|   1. Indomie               | Rp5.000"<<endl;
     cout<<"|   2. Nasi Goreng           | Rp7.000"<<endl;
@@ -187,7 +186,6 @@ void pilihmenu3(){
         cin>>makanan;
         cout<<"==========================================="<<endl;
         if(makanan==1){
-            int rasa;
             cout<<"| Pilih Varian Rasa INDOMIE:    |"<<endl;
             cout<<"|   1. Mie Goreng               |"<<endl;
             cout<<"|   2. Mie Rebus(Original)      |"<<endl;
@@ -199,18 +197,21 @@ void pilihmenu3(){
                 cout<<"========================================================="<<endl;
                 cout<<"| Anda Memilih Mie Goreng. Apakah ingin menambah Telor? |"<<endl;
                 cout<<"========================================================="<<endl;
-                cout<<" Ketik y/n untuk memilih(yes/no) : ";
+                cout<<" Ketik \"y/n\" untuk memilih(yes/no) : ";
                 cin>>yesno;
+                totalHarga1 = 5000;
                 if(yesno=="y"){
                     totalHarga1 = 5000+2000;
                 }
+
             }
             else if(rasa==2){
                 cout<<"=================================================================="<<endl;
                 cout<<"| Anda Memilih Mie Rebus(Original). Apakah ingin menambah Telor? |"<<endl;
                 cout<<"=================================================================="<<endl;
-                cout<<" Ketik y/n untuk memilih(yes/no) : ";
+                cout<<" Ketik \"y/n\" untuk memilih(yes/no) : ";
                 cin>>yesno;
+                totalHarga1 = 5000;
                 if(yesno=="y"){
                     totalHarga1 = 5000+2000;
                 }
@@ -219,35 +220,39 @@ void pilihmenu3(){
                 cout<<"======================================================="<<endl;
                 cout<<"| Anda Memilih Mie Soto. Apakah ingin menambah Telor? |"<<endl;
                 cout<<"======================================================="<<endl;
-                cout<<" Ketik y/n untuk memilih(yes/no) : ";
+                cout<<" Ketik \"y/n\" untuk memilih(yes/no) : ";
                 cin>>yesno;
+                totalHarga1 = 5000;
                 if(yesno=="y"){
                     totalHarga1 = 5000+2000;
                 }
+                totalseluruh = totalBayar+totalHarga1;
             }
             else if(rasa==4){
                 cout<<"=============================================================="<<endl;
                 cout<<"| Anda Memilih Mie Ayam Geprek. Apakah ingin menambah Telor? |"<<endl;
                 cout<<"=============================================================="<<endl;
-                cout<<" Ketik y/n untuk memilih(yes/no) : ";
+                cout<<" Ketik \"y/n\" untuk memilih(yes/no) : ";
                 cin>>yesno;
+                totalHarga1 = 5000;
                 if(yesno=="y"){
                     totalHarga1 = 5000+2000;
                 }
+                totalseluruh = totalBayar+totalHarga1;
             }
         }
         else if(makanan==2){
             cout<<"=========================================================="<<endl;
             cout<<"| Anda Memilih Nasi Goreng. Apakah ingin menambah Telor? |"<<endl;
             cout<<"=========================================================="<<endl;
-            cout<<" Ketik y/n untuk memilih(yes/no) : ";
-        cin>>yesno;
+            cout<<" Ketik \"y/n\" untuk memilih(yes/no) : ";
+            cin>>yesno;
+            totalHarga1 = 7000;
             if(yesno=="y"){
                 totalHarga1 = 5000+2000;
             }
         }
         system("cls");
-        string rasa;
         cout<<"| Pilih Minuman :             |"<<endl;
         cout<<"|    1. Pop Ice               | Rp3.000"<<endl;
         cout<<"|    2. TeaJus                | Rp2.000"<<endl;
@@ -256,34 +261,33 @@ void pilihmenu3(){
         cout<<"| >> Pilih Yang Anda Inginkan : ";
         cin>>minuman;
         if(minuman==1){
-            string rasa;
             totalHarga2 = 3000;
             cout<<"| >> Pilih Rasa Pop Ice       : ";
-            cin>>rasa;
+            cin>>varian;
         }
         else if(minuman==2){
-            string rasa;
             totalHarga2 = 2000;
             cout<<"| >> Pilih Rasa TeaJus        : ";
-            cin>>rasa;
+            cin>>varian;
         }
         else if(minuman==3){
-            string rasa;
             totalHarga2 = 3000;
             cout<<"| >> Pilih Rasa Nutrisari     : ";
             cin>>rasa;
         }
         else if(minuman==4){
-            string rasa;
             totalHarga2 = 4000;
             cout<<"| >> Pilih Rasa Susu          : ";
-            cin>>rasa;
+            cin>>varian;
         }
-    totalSeluruh = totalBayar+totalHarga1+totalHarga2;
+    totalHarga3 = totalHarga1+totalHarga2;
+    totalseluruh = totalBayar+totalHarga3;
     cout<<endl;
-    cout<<"========================================================="<<endl;
-    cout<<"TOTAL KESELURUHAN: "<<totalSeluruh<<endl;
-    cout<<"========================================================="<<endl;
+    cout<<"============================================"<<endl;
+    cout<<"||\t\tTOTAL : "<<totalHarga3<<"\t\t ||"<<endl;
+    cout<<"============================================"<<endl;
+    cout<<" Ketik \"n\" untuk mengakhiri : ";
+    cin>>enter;
 }
 long sewaPs(int x, int t){
     float total;
@@ -329,9 +333,9 @@ long pinjamPs(int x, int t){
 
 int main()
 {
-    int index,pilihSewa,pilihPS,harga,ps,nyewa,pilih;
-    string enter;
-    cout<<"  <<<<<< RENTAL PS TI 1C >>>>>>  "<<endl;
+    int index,pilihSewa,pilihPS,harga,ps;
+    string enter,pilih;
+    cout<<"<<<<<< RENTAL PS TI 1C >>>>>>  "<<endl;
     cout<<"============================="<<endl;
     cout<<"|| ---- Layanan Utama ---- ||"<<endl;
     cout<<"||                         ||"<<endl;
@@ -357,19 +361,22 @@ int main()
         cout<<"|| "<<ps<<". PlayStation "<<ps<<"  <<\n";
     }
     cout<<"====================================="<<endl;
-    cout<<" silahkan pilih varian PS berdasarkan nomor : ";
-    cin>>pilihPS;
     if(pilihSewa==1){
-        totalBayar = sewaPs(pilihPS,lamaJam);
-         for(index=0; index<5; index++){
-         cout<< " HARGA PlayStation "<<index+1<<" : "<<sewa[index]<<"/Jam"<<endl;
+
+        for(index=0; index<5; index++){
+            cout<< " HARGA PlayStation "<<index+1<<" : "<<sewa[index]<<"/Jam"<<endl;
         }
+        cout<<" silahkan pilih varian PS berdasarkan nomor : ";
+        cin>>pilihPS;
+        totalBayar = sewaPs(pilihPS,lamaJam);
     }
      else if(pilihSewa==2){
-        totalBayar = pinjamPs(pilihPS, lamaHari);
         for(int index=0; index<5; index++){
-         cout<< " HARGA PlayStation "<<index+1<<" : "<<pinjam[index]<<"/Hari"<<endl;
+            cout<< " HARGA PlayStation "<<index+1<<" : "<<pinjam[index]<<"/Hari"<<endl;
         }
+        cout<<" silahkan pilih varian PS berdasarkan nomor : ";
+        cin>>pilihPS;
+        totalBayar = pinjamPs(pilihPS, lamaHari);
     }
     cout<<"||=======================================||"<<endl;
     cout<<"||\t\tTOTAL : "<<totalBayar<<"\t\t ||"<<endl;
@@ -391,15 +398,164 @@ int main()
         cout<<" Pilih Yang Anda Mau(sesuai nomor) : ";
         cin>>pilih;
         cout<<endl;
-        if(pilih==1){
+        if(pilih=="1"){
             pilihmenu1();
         }
-        else if(pilih==2){
+        else if(pilih=="2"){
             pilihmenu2();
         }
-        else if(pilih==3){
+        else if(pilih=="3"){
             pilihmenu3();
         }
+    }
+    system("cls");
+    cout<<"==========================================================="<<endl;
+    cout<<"|| ----------- Terima Kasih Telah Berkunjung ----------- ||"<<endl;
+    cout<<"==========================================================="<<endl;
+
+
+
+    if(pilihSewa==1){
+
+        if(pilih=="t"){
+            cout<<"| >> Anda Memilih---------------------------| Playstation "<<pilihPS<<endl;
+            cout<<"| >> Anda Menyewa---------------------------| "<<lamaJam<<" Jam"<<endl;
+            cout<<"============================================="<<endl;
+            cout<<"||=========================================||"<<endl;
+            cout<<"||\t\tTOTAL : "<<totalBayar<<"\t\t   ||"<<endl;
+            cout<<"||=========================================||"<<endl;
+        }
+        else if(pilih=="1"){
+            cout<<"| >> Anda Memilih---------------------------| Playstation "<<pilihPS<<endl;
+            cout<<"| >> Anda Menyewa---------------------------| "<<lamaJam<<" Jam"<<endl;
+            cout<<"|================= Tambahan ================|"<<endl;
+            cout<<"| >> Anda Memilih---------------------------| Makanan"<<endl;
+            if(makanan==1){
+                cout<<"| >> Anda Memilih Makanan ------------------| Indomie ";
+                if(rasa==1){
+                    cout<<"Mie Goreng ";
+                    if(yesno=="y"){
+                        cout<<"Dan Tambah Telor"<<endl;
+                    }
+                }
+                else if(rasa==2){
+                    cout<<"Mie Rebus(Original) ";
+                    if(yesno=="y"){
+                        cout<<"Dan Tambah Telor"<<endl;
+                    }
+                }
+                else if(rasa==3){
+                    cout<<"Mie Soto ";
+                    if(yesno=="y"){
+                        cout<<"Dan Tambah Telor"<<endl;
+                    }
+                }
+                else if(rasa==3){
+                    cout<<"Mie Ayam Geprek ";
+                    if(yesno=="y"){
+                        cout<<"Dan Tambah Telor"<<endl;
+                    }
+                }
+            }
+            else if(makanan==2){
+                cout<<"| >> Anda Memilih Makanan ------------------| Nasi Goreng ";
+                if(yesno=="y"){
+                        cout<<"Dan Tambah Telor"<<endl;
+                }
+            }
+            cout<<"\n============================================="<<endl;
+            cout<<endl;
+            cout<<"||===========================================||"<<endl;
+            cout<<"||\t\tTOTAL : "<<totalseluruh<<"\t\t   ||"<<endl;
+            cout<<"||===========================================||"<<endl;
+        }
+        else if(pilih=="2"){
+            cout<<"| >> Anda Memilih---------------------------| Playstation "<<pilihPS<<endl;
+            cout<<"| >> Anda Menyewa---------------------------| "<<lamaJam<<" Jam"<<endl;
+            cout<<"| >> Anda Memilih---------------------------| Minuman ";
+            if(minuman==1){
+                cout<<"PopIce "<<varian<<endl;
+            }
+            if(minuman==2){
+                cout<<"TeaJus "<<varian<<endl;
+            }
+            if(minuman==3){
+                cout<<"Nutrisari "<<varian<<endl;
+            }
+            if(minuman==4){
+                cout<<"Susu "<<varian<<endl;
+            }
+            cout<<"\n============================================="<<endl;
+            cout<<endl;
+            cout<<"||===========================================||"<<endl;
+            cout<<"||\t\tTOTAL : "<<totalseluruh<<"\t\t   ||"<<endl;
+            cout<<"||===========================================||"<<endl;
+        }
+        else if(pilih=="3"){
+            cout<<"| >> Anda Memilih---------------------------| Playstation "<<pilihPS<<endl;
+            cout<<"| >> Anda Menyewa---------------------------| "<<lamaJam<<" Jam"<<endl;
+            cout<<"| >> Anda Memilih---------------------------| Makanan"<<endl;
+            if(makanan==1){
+                cout<<"| >> Anda Memilih Makanan ------------------| Indomie ";
+                if(rasa==1){
+                    cout<<"Mie Goreng ";
+                    if(yesno=="y"){
+                        cout<<"Dan Tambah Telor";
+                    }
+                }
+                else if(rasa==2){
+                    cout<<"Mie Rebus(Original) ";
+                    if(yesno=="y"){
+                        cout<<"Dan Tambah Telor";
+                    }
+                }
+                else if(rasa==3){
+                    cout<<"Mie Soto ";
+                    if(yesno=="y"){
+                        cout<<"Dan Tambah Telor";
+                    }
+                }
+                else if(rasa==3){
+                    cout<<"Mie Ayam Geprek ";
+                    if(yesno=="y"){
+                        cout<<"Dan Tambah Telor";
+                    }
+                }
+            }
+            else if(makanan==2){
+                cout<<"| >> Anda Memilih Makanan ------------------| Nasi Goreng ";
+                if(yesno=="y"){
+                    cout<<"Dan Tambah Telor"<<endl;
+                }
+            }
+            cout<<"\n| >> Anda Memilih---------------------------| Minuman ";
+            if(minuman==1){
+                cout<<"PopIce "<<varian<<endl;
+            }
+            if(minuman==2){
+                cout<<"TeaJus "<<varian<<endl;
+            }
+            if(minuman==3){
+                cout<<"Nutrisari "<<varian<<endl;
+            }
+            if(minuman==4){
+                cout<<"Susu "<<varian<<endl;
+            }
+            cout<<"\n============================================="<<endl;
+            cout<<endl;
+            cout<<"||===========================================||"<<endl;
+            cout<<"||\t\tTOTAL : "<<totalseluruh<<"\t\t   ||"<<endl;
+            cout<<"||===========================================||"<<endl;
+        }
+    }
+    else if(pilihSewa==2){
+        cout<<"| >> Nama-----------------------------------| "<<nama<<endl;
+        cout<<"| >> Alamat---------------------------------| "<<alamat<<endl;
+        cout<<"| >> Anda Memilih---------------------------| Playstation "<<pilihPS<<endl;
+        cout<<"| >> Anda Menyewa---------------------------| "<<lamaHari<<" Hari"<<endl;
+        cout<<"||=========================================||"<<endl;
+        cout<<"||\t\tTOTAL : "<<totalBayar<<"\t\t   ||"<<endl;
+        cout<<"||=========================================||"<<endl;
     }
     return 0;
 }
