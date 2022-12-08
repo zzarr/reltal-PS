@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1669688323 source:d:\algoritma progamer_d3ti1c\rental ps\main.cpp
+	<iostream>
+	<conio.h>
+
+1670433619 source:e:\bash\new folder (3)\rental-ps\main.cpp
+	<iostream>
+	<conio.h>
+	"sub.h"
+
+1670432654 e:\bash\new folder (3)\rental-ps\sub.h
+
