@@ -148,26 +148,30 @@ void pilihmenu2(){
         if(minuman==1){
             totalHarga2 = 3000;
             totalseluruh = totalBayar+totalHarga2;
+            getline(cin,spasi);
             cout<<"| >> Pilih Rasa Pop Ice       : ";
-            cin>>varian;
+            getline(cin,varian);
         }
         else if(minuman==2){
             totalHarga2 = 2000;
             totalseluruh = totalBayar+totalHarga2;
-            cout<<"| >> Pilih Rasa TeaJus        : ";
-            cin>>varian;
+            getline(cin,spasi);
+            cout<<"| >> Pilih Rasa Pop Ice       : ";
+            getline(cin,varian);
         }
         else if(minuman==3){
             totalHarga2 = 3000;
             totalseluruh = totalBayar+totalHarga2;
-            cout<<"| >> Pilih Rasa Nutrisari     : ";
-            cin>>varian;
+            getline(cin,spasi);
+            cout<<"| >> Pilih Rasa Pop Ice       : ";
+            getline(cin,varian);
         }
         else if(minuman==4){
             totalHarga2 = 4000;
             totalseluruh = totalBayar+totalHarga2;
-            cout<<"| >> Pilih Rasa Susu          : ";
-            cin>>varian;
+            getline(cin,spasi);
+            cout<<"| >> Pilih Rasa Pop Ice       : ";
+            getline(cin,varian);
         }
     cout<<endl;
     cout<<"============================================"<<endl;
@@ -262,23 +266,27 @@ void pilihmenu3(){
         cin>>minuman;
         if(minuman==1){
             totalHarga2 = 3000;
+            getline(cin,spasi);
             cout<<"| >> Pilih Rasa Pop Ice       : ";
-            cin>>varian;
+            getline(cin,varian);
         }
         else if(minuman==2){
             totalHarga2 = 2000;
+            getline(cin,spasi);
             cout<<"| >> Pilih Rasa TeaJus        : ";
-            cin>>varian;
+            getline(cin,varian);
         }
         else if(minuman==3){
             totalHarga2 = 3000;
+            getline(cin,spasi);
             cout<<"| >> Pilih Rasa Nutrisari     : ";
-            cin>>rasa;
+            getline(cin,varian);
         }
         else if(minuman==4){
             totalHarga2 = 4000;
+            getline(cin,spasi);
             cout<<"| >> Pilih Rasa Susu          : ";
-            cin>>varian;
+            getline(cin,varian);
         }
     totalHarga3 = totalHarga1+totalHarga2;
     totalseluruh = totalBayar+totalHarga3;
@@ -472,6 +480,7 @@ int main()
         else if(pilih=="2"){
             cout<<"| >> Anda Memilih---------------------------| Playstation "<<pilihPS<<endl;
             cout<<"| >> Anda Menyewa---------------------------| "<<lamaJam<<" Jam"<<endl;
+            cout<<"|================= Tambahan ================|"<<endl;
             cout<<"| >> Anda Memilih---------------------------| Minuman ";
             if(minuman==1){
                 cout<<"PopIce "<<varian<<endl;
@@ -494,6 +503,7 @@ int main()
         else if(pilih=="3"){
             cout<<"| >> Anda Memilih---------------------------| Playstation "<<pilihPS<<endl;
             cout<<"| >> Anda Menyewa---------------------------| "<<lamaJam<<" Jam"<<endl;
+             cout<<"|================= Tambahan ================|"<<endl;
             cout<<"| >> Anda Memilih---------------------------| Makanan"<<endl;
             if(makanan==1){
                 cout<<"| >> Anda Memilih Makanan ------------------| Indomie ";
@@ -525,7 +535,7 @@ int main()
             else if(makanan==2){
                 cout<<"| >> Anda Memilih Makanan ------------------| Nasi Goreng ";
                 if(yesno=="y"){
-                    cout<<"Dan Tambah Telor"<<endl;
+                    cout<<"Dan Tambah Telor";
                 }
             }
             cout<<"\n| >> Anda Memilih---------------------------| Minuman ";
@@ -554,7 +564,7 @@ int main()
         cout<<"| >> Anda Memilih---------------------------| Playstation "<<pilihPS<<endl;
         cout<<"| >> Anda Menyewa---------------------------| "<<lamaHari<<" Hari"<<endl;
         cout<<"||=========================================||"<<endl;
-        cout<<"||\t\tTOTAL : "<<totalBayar<<"\t\t   ||"<<endl;
+        cout<<"||\t\tTOTAL : "<<totalBayar<<"\t\t    ||"<<endl;
         cout<<"||=========================================||"<<endl;
     }
     return 0;
