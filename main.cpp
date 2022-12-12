@@ -57,11 +57,6 @@ void pilihmenu1(){
             }
             totalseluruh = totalBayar+totalHarga1;
             cout<<endl;
-            cout<<"============================================"<<endl;
-            cout<<"||\t\tTOTAL : "<<totalHarga1<<"\t\t ||"<<endl;
-            cout<<"============================================"<<endl;
-            cout<<" Ketik \"n\" untuk mengakhiri : ";
-            cin>>enter;
         }
         else if(rasa==2){
             cout<<"=================================================================="<<endl;
@@ -75,11 +70,7 @@ void pilihmenu1(){
             }
             totalseluruh = totalBayar+totalHarga1;
             cout<<endl;
-            cout<<"============================================"<<endl;
-            cout<<"||\t\tTOTAL : "<<totalHarga1<<"\t\t ||"<<endl;
-            cout<<"============================================"<<endl;
-            cout<<" Ketik \"n\" untuk mengakhiri : ";
-            cin>>enter;
+
         }
         else if(rasa==3){
             cout<<"======================================================="<<endl;
@@ -93,11 +84,7 @@ void pilihmenu1(){
             }
             totalseluruh = totalBayar+totalHarga1;
             cout<<endl;
-            cout<<"============================================"<<endl;
-            cout<<"||\t\tTOTAL : "<<totalHarga1<<"\t\t ||"<<endl;
-            cout<<"============================================"<<endl;
-            cout<<" Ketik \"n\" untuk mengakhiri : ";
-            cin>>enter;
+
         }
         else if(rasa==4){
             cout<<"=============================================================="<<endl;
@@ -111,12 +98,13 @@ void pilihmenu1(){
             }
             totalseluruh = totalBayar+totalHarga1;
             cout<<endl;
-            cout<<"============================================"<<endl;
-            cout<<"||\t\tTOTAL : "<<totalHarga1<<"\t\t ||"<<endl;
-            cout<<"============================================"<<endl;
-            cout<<" Ketik \"n\" untuk mengakhiri : ";
-            cin>>enter;
+
         }
+        cout<<"============================================"<<endl;
+        cout<<"||\t\tTOTAL : "<<totalHarga1<<"\t\t ||"<<endl;
+        cout<<"============================================"<<endl;
+        cout<<" Ketik \"n\" untuk mengakhiri : ";
+        cin>>enter;
     }
     else if(makanan==2){
         cout<<"========================================================="<<endl;
@@ -554,7 +542,7 @@ int main()
             cout<<"\n============================================="<<endl;
             cout<<endl;
             cout<<"||===========================================||"<<endl;
-            cout<<"||\t\tTOTAL : "<<totalseluruh<<"\t\t   ||"<<endl;
+            cout<<"||\t\tTOTAL : "<<totalseluruh<<"\t\t         ||"<<endl;
             cout<<"||===========================================||"<<endl;
         }
     }
@@ -564,7 +552,7 @@ int main()
         cout<<"| >> Anda Memilih---------------------------| Playstation "<<pilihPS<<endl;
         cout<<"| >> Anda Menyewa---------------------------| "<<lamaHari<<" Hari"<<endl;
         cout<<"||=========================================||"<<endl;
-        cout<<"||\t\tTOTAL : "<<totalBayar<<"\t\t    ||"<<endl;
+        cout<<"||\t\tTOTAL : "<<totalBayar<<"\t\t         ||"<<endl;
         cout<<"||=========================================||"<<endl;
     }
     return 0;
