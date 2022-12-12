@@ -32,7 +32,7 @@ void pilihmenu1(){
     cout<<"| Pilih Makanan :            |"<<endl;
     cout<<"|   1. Indomie               | Rp5.000"<<endl;
     cout<<"|   2. Nasi Goreng           | Rp7.000"<<endl;
-    cout<<"|   3. Tambah Telor          | Rp2.000"<<endl;
+    cout<<"|   + Tambah Telor          | Rp2.000"<<endl;
     cout<<" >> Pilih Makanan Sesuai No  : ";
     cin>>makanan;
     cout<<"==========================================="<<endl;
@@ -185,7 +185,7 @@ void pilihmenu3(){
     cout<<"| Pilih Makanan :            |"<<endl;
     cout<<"|   1. Indomie               | Rp5.000"<<endl;
     cout<<"|   2. Nasi Goreng           | Rp7.000"<<endl;
-    cout<<"|   3. Tambah Telor          | Rp2.000"<<endl;
+    cout<<"|   + Tambah Telor          | Rp2.000"<<endl;
         cout<<" >> Pilih Makanan Sesuai No  : ";
         cin>>makanan;
         cout<<"==========================================="<<endl;
@@ -566,6 +566,12 @@ int main()
         cout<<"||=========================================||"<<endl;
         cout<<"||\t\tTOTAL : "<<totalBayar<<"\t\t    ||"<<endl;
         cout<<"||=========================================||"<<endl;
+    }
+    cout<<"ketik \"y\" untuk mengulang : ";
+    cin>>yesno;
+    system("cls");
+    if(yesno=="y"){
+        return main();
     }
     return 0;
 }
