@@ -556,5 +556,11 @@ int main()
         cout<<"||\t\tTOTAL : "<<totalBayar<<"\t\t ||"<<endl;
         cout<<"||======================================-||"<<endl;
     }
+    cout<<"ketik \"y\" untuk mengulang : ";
+    cin>>yesno;
+    system("cls");
+    if(yesno=="y"){
+        return main();
+    }
     return 0;
 }
