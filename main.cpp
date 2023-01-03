@@ -147,26 +147,30 @@ void pilihmenu2(){
         if(minuman==1){
             totalHarga2 = 3000;
             totalseluruh = totalBayar+totalHarga2;
+            getline(cin, spasi);
             cout<<"| >> Pilih Rasa Pop Ice       : ";
-            cin>>varian;
+            getline(cin, varian);
         }
         else if(minuman==2){
             totalHarga2 = 2000;
             totalseluruh = totalBayar+totalHarga2;
-            cout<<"| >> Pilih Rasa TeaJus        : ";
-            cin>>varian;
+            getline(cin, spasi);
+            cout<<"| >> Pilih Rasa TeaJus       : ";
+            getline(cin, varian);
         }
         else if(minuman==3){
             totalHarga2 = 3000;
             totalseluruh = totalBayar+totalHarga2;
-            cout<<"| >> Pilih Rasa Nutrisari     : ";
-            cin>>varian;
+            getline(cin, spasi);
+            cout<<"| >> Pilih Rasa Nutrisari    : ";
+            getline(cin, varian);
         }
         else if(minuman==4){
             totalHarga2 = 4000;
             totalseluruh = totalBayar+totalHarga2;
-            cout<<"| >> Pilih Rasa Susu          : ";
-            cin>>varian;
+            getline(cin, spasi);
+            cout<<"| >> Pilih Rasa Susu         : ";
+            getline(cin, varian);
         }
     cout<<endl;
     cout<<"==========================================="<<endl;
@@ -261,23 +265,27 @@ void pilihmenu3(){
         cin>>minuman;
         if(minuman==1){
             totalHarga2 = 3000;
+            getline(cin, spasi);
             cout<<"| >> Pilih Rasa Pop Ice       : ";
-            cin>>varian;
+            getline(cin, varian);
         }
         else if(minuman==2){
             totalHarga2 = 2000;
+            getline(cin, spasi);
             cout<<"| >> Pilih Rasa TeaJus        : ";
-            cin>>varian;
+            getline(cin, varian);
         }
         else if(minuman==3){
             totalHarga2 = 3000;
+           getline(cin, spasi);
             cout<<"| >> Pilih Rasa Nutrisari     : ";
-            cin>>rasa;
+            getline(cin, varian);
         }
         else if(minuman==4){
             totalHarga2 = 4000;
+            getline(cin, spasi);
             cout<<"| >> Pilih Rasa Susu          : ";
-            cin>>varian;
+            getline(cin, varian);
         }
     totalHarga3 = totalHarga1+totalHarga2;
     totalseluruh = totalBayar+totalHarga3;
@@ -332,8 +340,20 @@ long pinjamPs(int x, int t){
 
 int main()
 {
+    //PERATURAN
+    cout<<"============================================================================"<<endl;
+    cout<<"|   PERATURAN                                                              |"<<endl;
+    cout<<"|                                                                          |"<<endl;
+    cout<<"|        1. Dilarang Merusak Properti                                      |"<<endl;
+    cout<<"|        2. Dilarang Membuat Kerusuhuan                                    |"<<endl;
+    cout<<"|        3. Apabila  Merusak PlayStation Harus mengganti Rugi              |"<<endl;
+    cout<<"|           Dan Akan Di Blacklist                                          |"<<endl;
+    cout<<"============================================================================"<<endl;
+
+    //FITUR UTAMA
     int index,pilihSewa,pilihPS,harga,ps;
     string enter,pilih;
+    cout<<endl;
     cout<<"<<<<<< RENTAL PS TI 1C >>>>>>  "<<endl;
     cout<<"============================="<<endl;
     cout<<"|| ---- Layanan Utama ---- ||"<<endl;
@@ -351,8 +371,11 @@ int main()
     else if(pilihSewa==2){
         pilihan2();
     }
+    else {
+        return main();
+    }
     cout<<endl;
-    //Disini Pilih Ps
+
     cout<<"||================================||"<<endl;
     cout<<"|| <<<<<< PS YANG TERSEDIA >>>>>> ||"<<endl;;
     cout<<"||================================||"<<endl;
@@ -367,6 +390,10 @@ int main()
         }
         cout<<" silahkan pilih varian PS berdasarkan nomor : ";
         cin>>pilihPS;
+        while(pilihPS<1 || pilihPS>5){
+            cout<<" silahkan pilih varian PS berdasarkan nomor : ";
+            cin>>pilihPS;
+        }
         totalBayar = sewaPs(pilihPS,lamaJam);
     }
      else if(pilihSewa==2){
@@ -375,6 +402,10 @@ int main()
         }
         cout<<" silahkan pilih varian PS berdasarkan nomor : ";
         cin>>pilihPS;
+        while(pilihPS<1 || pilihPS>5){
+            cout<<" silahkan pilih varian PS berdasarkan nomor : ";
+            cin>>pilihPS;
+        }
         totalBayar = pinjamPs(pilihPS, lamaHari);
     }
     cout<<"||=======================================||"<<endl;
@@ -383,8 +414,9 @@ int main()
     cout<<endl;
     cout<<"ketik \"ok\" Lalu klik enter : ";
     cin>>enter;
-
     system("cls");
+
+    //FITUR TAMBAHAN MAIN DISINI
     if(pilihSewa==1){
         cout<<"================================"<<endl;
         cout<<"|| ---- Layanan Tambahan ---- ||"<<endl;
@@ -406,18 +438,21 @@ int main()
         else if(pilih=="3"){
             pilihmenu3();
         }
+
     }
+
+    //BUKTI CETAK
     system("cls");
     cout<<"==========================================================="<<endl;
     cout<<"|| ----------- Terima Kasih Telah Berkunjung ----------- ||"<<endl;
     cout<<"==========================================================="<<endl;
-
     if(pilihSewa==1){
 
         if(pilih=="t"){
             cout<<"| >> Anda Memilih---------------------------| Playstation "<<pilihPS<<endl;
             cout<<"| >> Anda Menyewa---------------------------| "<<lamaJam<<" Jam"<<endl;
             cout<<"============================================="<<endl;
+            cout<<endl;
             cout<<"||=======================================||"<<endl;
             cout<<"||\t\tTOTAL : "<<totalBayar<<"\t\t ||"<<endl;
             cout<<"||=======================================||"<<endl;
@@ -460,7 +495,7 @@ int main()
                         cout<<"Dan Tambah Telor"<<endl;
                 }
             }
-            cout<<"\n============================================="<<endl;
+            cout<<"============================================="<<endl;
             cout<<endl;
             cout<<"||=======================================||"<<endl;
             cout<<"||\t\tTOTAL : "<<totalseluruh<<"\t\t ||"<<endl;
@@ -483,7 +518,7 @@ int main()
             if(minuman==4){
                 cout<<"Susu "<<varian<<endl;
             }
-            cout<<"\n============================================="<<endl;
+            cout<<"============================================="<<endl;
             cout<<endl;
             cout<<"||=======================================||"<<endl;
             cout<<"||\t\tTOTAL : "<<totalseluruh<<"\t\t ||"<<endl;
@@ -540,7 +575,7 @@ int main()
             if(minuman==4){
                 cout<<"Susu "<<varian<<endl;
             }
-            cout<<"\n============================================="<<endl;
+            cout<<"============================================="<<endl;
             cout<<endl;
             cout<<"||=======================================||"<<endl;
             cout<<"||\t\tTOTAL : "<<totalseluruh<<"\t\t ||"<<endl;
@@ -552,6 +587,8 @@ int main()
         cout<<"| >> Alamat---------------------------------| "<<alamat<<endl;
         cout<<"| >> Anda Memilih---------------------------| Playstation "<<pilihPS<<endl;
         cout<<"| >> Anda Menyewa---------------------------| "<<lamaHari<<" Hari"<<endl;
+        cout<<"============================================="<<endl;
+        cout<<endl;
         cout<<"||=======================================||"<<endl;
         cout<<"||\t\tTOTAL : "<<totalBayar<<"\t\t ||"<<endl;
         cout<<"||======================================-||"<<endl;
